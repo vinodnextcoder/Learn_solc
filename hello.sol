@@ -1,14 +1,14 @@
-pragma solidity ^0.8.13;
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.4.16 <0.9.0;
 
-contract HelloWorld {
+contract SimpleStorage {
+    uint storedData;
 
-    string message;
-
-    constructor(string memory initMessage) public {
-        message = initMessage;
+    function set(uint x) public {
+        storedData = x;
     }
 
-    function update(string memory newMessage) public {
-        message = newMessage;
+    function get() public view returns (uint) {
+        return storedData;
     }
 }
